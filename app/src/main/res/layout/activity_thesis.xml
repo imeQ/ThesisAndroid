@@ -17,57 +17,137 @@
         android:layout_weight="0.09"
         android:layout_marginBottom="20dp" />
 
-    <TableLayout
+    <GridLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:background="#efd6ced4"
-        android:orientation="vertical">
+        android:columnCount="2"
+        android:useDefaultMargins="true" >
 
-        <TableRow
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Imię"
+            android:id="@+id/nameText"
+            android:textSize="19dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/name"
+            android:layout_gravity="fill_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nazwisko"
+            android:id="@+id/textView9"
+            android:textSize="19dp"
+            android:focusable="true"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/surname"
+            android:layout_gravity="fill_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nr Indeksu"
+            android:id="@+id/textView3"
+            android:textSize="19dp"
+            android:focusable="true"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/bookNumber"
+            android:layout_gravity="fill_horizontal" />
+
+    </GridLayout>
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/thesisLayout"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Twoja praca "
+            android:id="@+id/textView2"
+            android:textSize="25dp"
+            android:layout_gravity="left" />
+
+        <GridLayout
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="fill_parent"
+            android:columnCount="2"
+            android:useDefaultMargins="true">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Imię"
+                android:text="Tytuł"
                 android:id="@+id/indexNumber"
-                android:textSize="25dp"
+                android:textSize="19dp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/nameOutput"
-                android:textSize="25dp" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:orientation="vertical"
-            android:id="@+id/surname">
+                android:text="New Text"
+                android:id="@+id/thesisName"
+                android:layout_gravity="fill_horizontal" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nazwisko"
+                android:text="Opis"
                 android:id="@+id/textView"
-                android:textSize="25dp"
+                android:textSize="19dp"
                 android:focusable="true"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/surnameOutput"
-                android:textSize="25dp" />
+                android:text="New Text"
+                android:id="@+id/thesisDescription"
+                android:layout_gravity="fill_horizontal" />
+        </GridLayout>
 
-        </TableRow>
+    </LinearLayout>
 
-    </TableLayout>
+    <Button
+        android:id="@+id/action"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_selector"
+        android:text="Przypisz pracę"
+        android:textColor="#ff000000"
+        android:textSize="24dp"/>
 
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_selector"
+        android:text="Wyloguj"
+        android:textColor="#ff000000"
+        android:textSize="24dp" />
 
 </LinearLayout>

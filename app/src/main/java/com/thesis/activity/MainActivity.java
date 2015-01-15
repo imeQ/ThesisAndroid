@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.thesis.com.thesis.singleton.ThesisSingleton;
+import com.thesis.singleton.ThesisSingleton;
 import com.thesis.model.Student;
 
 import retrofit.Callback;
@@ -53,7 +53,14 @@ public class MainActivity extends ActionBarActivity {
 
             @Override
             public void failure(RetrofitError error) {
-                Toast.makeText(MainActivity.this, "Wystąpił problem. Spróbuj ponownie", Toast.LENGTH_LONG).show();
+                if(error.getKind().equals(RetrofitError.Kind.NETWORK)){
+                    Toast.makeText(MainActivity.this, "Blad " + error.toString(), Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if(error.getKind().equals(RetrofitError.Kind.UNEXPECTED)){
+                    Toast.makeText(MainActivity.this, "Błędny nr indeksu lub pesel ", Toast.LENGTH_LONG).show();
+                    return;
+                }
             }
         });
     }

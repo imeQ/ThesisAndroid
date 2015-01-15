@@ -1,5 +1,6 @@
-package com.thesis.com.thesis.singleton;
+package com.thesis.singleton;
 
+import com.thesis.common.Const;
 import com.thesis.model.Student;
 import com.thesis.rest.DataApi;
 
@@ -11,13 +12,11 @@ import retrofit.RestAdapter;
 public class ThesisSingleton {
 
     private static ThesisSingleton instance;
-    private Student loggedStudent;
-
     private DataApi dataApi;
 
     private ThesisSingleton(){
         RestAdapter restAdapter = new RestAdapter.Builder()
-                .setEndpoint("http://10.0.2.7:9090")
+                .setEndpoint(Const.API_URL)
                 .build();
 
         dataApi = restAdapter.create(DataApi.class);
@@ -34,11 +33,4 @@ public class ThesisSingleton {
         return dataApi;
     }
 
-    public Student getLoggedStudent() {
-        return loggedStudent;
-    }
-
-    public void setLoggedStudent(Student loggedStudent) {
-        this.loggedStudent = loggedStudent;
-    }
 }
